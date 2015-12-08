@@ -1,0 +1,8 @@
+.DS_Store
+.sass-cache
+.tmp
+node_modules
+dist/styles/*
+!dist/styles/vendors
+dist/scripts/*
+!dist/scripts/vendors
