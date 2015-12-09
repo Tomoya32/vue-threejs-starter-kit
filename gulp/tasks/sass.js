@@ -8,11 +8,11 @@ var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var config     = require('../config').styles;
 
-gulp.task('styles:dev', function(){
+gulp.task('sass', function(){
     compile( config.options.dev );
 });
 
-gulp.task('styles:build', function(){
+gulp.task('sass:build', function(){
     compile( config.options.build );
 });
 
