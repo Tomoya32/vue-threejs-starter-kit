@@ -3,7 +3,6 @@
   <div id="home">
 
     <h1>Home</h1>
-    <a v-link="{ path: '/about' }">About</a>
 
   </div>
 
