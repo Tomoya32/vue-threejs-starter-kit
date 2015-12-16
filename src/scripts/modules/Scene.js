@@ -50,7 +50,7 @@ export default class Scene {
         antialias: true
       });
 
-      this.renderer.setClearColor( 0x000000, 1 );
+      this.renderer.setClearColor( 0xffffff, 1 );
       this.renderer.setSize( this.params.width, this.params.height );
 
       this.addPostProcessing();
@@ -78,7 +78,7 @@ export default class Scene {
 
       let objectsLength = this.objects.length;
       for (let i = 0; i < objectsLength; i++) {
-        this.objects[ i ].update( elapsed, ts, tick );
+        this.objects[ i ].update( elapsed, ts, this.tick );
       };
 
       }
@@ -103,6 +103,13 @@ export default class Scene {
           this.renderer.render( this.scene, this.camera );
 
         }
+    }
+
+    addObject( object ) {
+
+      this.scene.add( object.getMesh() );
+      this.objects.push( object );
+
     }
 
     addPostProcessing() {
