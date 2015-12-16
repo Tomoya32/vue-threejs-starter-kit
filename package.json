@@ -12,7 +12,7 @@
     "event-stream": "^3.3.2",
     "glob": "^6.0.1",
     "glsl-curl-noise": "*",
-    "glslify": "^2.3.1",
+    "glslify": "^5.0.0",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
@@ -38,12 +38,11 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "vue-hot-reload-api": "^1.2.2",
-    "vueify": "^7.0.2",
+    "vueify": "^7.1.0",
     "vueify-insert-css": "^1.0.0",
     "watchify": "^3.6.1"
   },
   "dependencies": {
-    "@superguigui/wagner": "^0.0.81",
     "dat-gui": "*",
     "three": "^0.73.0",
     "vue": "^1.0.10",

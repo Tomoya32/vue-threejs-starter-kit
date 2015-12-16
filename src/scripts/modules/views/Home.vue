@@ -2,13 +2,27 @@
 
   <div id="home" class="section">
 
-    <h1>Home</h1>
+
 
   </div>
 
 </template>
 
 <script lang="babel">
+
+  import Scene from '../Scene';
+
+  export default {
+
+    ready() {
+
+      this.scene = new Scene();
+
+
+      this.scene.init();
+    }
+
+  };
 
 
 </script>

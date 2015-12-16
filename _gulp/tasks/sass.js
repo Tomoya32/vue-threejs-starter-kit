@@ -4,16 +4,16 @@ var minifyCss = require('gulp-minify-css');
 var concat = require('gulp-concat');
 var glob       = require('glob');
 var gulpif     = require('gulp-if');
-var util = require('gulp-util');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass');
 var config     = require('../config').styles;
 
 gulp.task('sass', function(){
+    compile( config.options.dev );
+});
 
-  var context = util.env.context == undefined ? "dev" : util.env.context;
-  compile( config.options[ context ] );
-
+gulp.task('sass:build', function(){
+    compile( config.options.build );
 });
 
 function compile( options ) {

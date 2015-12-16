@@ -1,5 +1,6 @@
 import THREE from 'three';
 import Controls from 'orbit-controls';
+import PostProcessing from './PostProcessing';
 
 export default class Scene {
 

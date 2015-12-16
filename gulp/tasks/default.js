@@ -1,8 +1,9 @@
 var gulp   = require('gulp');
-var config = require('../config');
 
-gulp.task('compile', ['sass', 'browserify:dev']);
+gulp.task('compile', ['sass', 'browserify']);
 
-gulp.task('server', ['browserSync:server', 'compile']);
+gulp.task('build', ['compile']);
 
-gulp.task('default', ['watch']);
+gulp.task('dev', ['watch', 'browserSync', 'compile']);
+
+gulp.task('default', ['dev']);
