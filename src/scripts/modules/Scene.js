@@ -4,8 +4,20 @@ import PostProcessing from './PostProcessing';
 
 export default class Scene {
 
-    constructor( options = {} ) {
+    constructor( options = {}) {
 
+      let defaultOptions = {
+        "active": options.active || true,
+        "width": options.width || window.innerWidth,
+        "height": options.height || window.innerHeight,
+        "postprocessing": options.postprocessing || false,
+        "background": {
+          "color": options.background.color || new THREE.Color( 0xffffff ),
+          "opacity": options.background.opacity !== undefined ? options.background.opacity : 1
+        }
+      };
+
+      this.options = defaultOptions;
       this.scene = null;
       this.camera = null;
       this.renderer = null;
@@ -13,13 +25,6 @@ export default class Scene {
       this.container = options.container || document.body;
       this.controls = null;
       this.keyboard = null;
-
-      this.params = {
-      active: options.active || true,
-        height: options.height || window.innerHeight,
-        width: options.width || window.innerWidth,
-        postprocessing: options.postprocessing || false
-      };
 
       this.mouse = {
         x: null,
@@ -29,7 +34,6 @@ export default class Scene {
       this.objects = [];
 
       this.clock = null;
-
     }
 
     init() {
@@ -37,7 +41,7 @@ export default class Scene {
       this.addListeners();
 
       this.scene = new THREE.Scene();
-      this.camera = new THREE.PerspectiveCamera( 45, this.params.width / this.params.height, 1, 10000 );
+      this.camera = new THREE.PerspectiveCamera( 45, this.options.width / this.options.height, 1, 10000 );
 
 
       this.target = new THREE.Vector3();
@@ -50,8 +54,8 @@ export default class Scene {
         antialias: true
       });
 
-      this.renderer.setClearColor( 0xffffff, 1 );
-      this.renderer.setSize( this.params.width, this.params.height );
+      this.renderer.setClearColor( this.options.background.color, this.options.background.opacity );
+      this.renderer.setSize( this.options.width, this.options.height );
 
       this.addPostProcessing();
 
@@ -74,7 +78,7 @@ export default class Scene {
       let elapsed = Date.now() - this.clock;
       window.requestAnimationFrame( this.animate.bind(this) );
 
-      if (this.params.active) {
+      if (this.options.active) {
 
       let objectsLength = this.objects.length;
       for (let i = 0; i < objectsLength; i++) {
@@ -94,7 +98,7 @@ export default class Scene {
         this.camera.position.fromArray(position);
         this.camera.lookAt(this.target.fromArray(direction));
 
-        if ( this.params.postprocessing ) {
+        if ( this.options.postprocessing ) {
 
           this.postprocessing.render();
 
@@ -126,13 +130,13 @@ export default class Scene {
 
     onWindowResize() {
 
-    	this.params.width = window.innerWidth;
-	    this.params.height = window.innerHeight;
+    	this.options.width = window.innerWidth;
+	    this.options.height = window.innerHeight;
 
-	    this.camera.aspect = this.params.width / this.params.height;
+	    this.camera.aspect = this.options.width / this.options.height;
 	    this.camera.updateProjectionMatrix();
 
-	    this.renderer.setSize( this.params.width, this.params.height );
+	    this.renderer.setSize( this.options.width, this.options.height );
 
     }
 
