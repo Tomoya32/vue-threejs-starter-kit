@@ -52,7 +52,7 @@ export default class Scene {
         antialias: true
       });
 
-      this.renderer.setClearColor( this.options.background.color, this.options.background.opacity );
+      this.renderer.setClearColor( this.options.backgroundColor, this.options.backgroundOpacity );
       this.renderer.setSize( this.options.width, this.options.height );
 
       this.addPostProcessing();
