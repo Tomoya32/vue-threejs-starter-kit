@@ -11,10 +11,8 @@ export default class Scene {
         "width": options.width || window.innerWidth,
         "height": options.height || window.innerHeight,
         "postprocessing": options.postprocessing || false,
-        "background": {
-          "color": options.background.color || new THREE.Color( 0xffffff ),
-          "opacity": options.background.opacity !== undefined ? options.background.opacity : 1
-        }
+        "backgroundOpacity": options.backgroundOpacity !== undefined ? options.backgroundOpacity : 1,
+        "backgroundColor": options.backgroundColor || new THREE.Color( 0xffffff )
       };
 
       this.options = defaultOptions;
