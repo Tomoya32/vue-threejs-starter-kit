@@ -16,9 +16,10 @@ export default class Object3D {
         vertexShader: this.vertexShader,
         fragmentShader: this.fragmentShader,
         shading: THREE.FlatShading,
-        wireframe: true
+        wireframe: true,
+        wireframeLinewidth: 1
     });
-    this.geometry = new THREE.SphereGeometry( 5, 32, 32 );
+    this.geometry = new THREE.SphereGeometry( 10, 32, 32 );
     this.mesh = new THREE.Mesh( this.geometry, this.material );
 
   }
