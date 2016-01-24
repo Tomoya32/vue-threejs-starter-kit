@@ -3,7 +3,7 @@ import WAGNER from '@superguigui/wagner';
 import FXAAPass from '@superguigui/wagner/src/passes/fxaa/FXAAPass';
 import Vignette from '@superguigui/wagner/src/passes/vignette/VignettePass';
 import Bloom from '@superguigui/wagner/src/passes/bloom/MultiPassBloomPass';
-import Config from './helpers/Config';
+import Config from '../helpers/Config';
 import DAT from 'dat-gui';
 
 export default class PostProcessing {

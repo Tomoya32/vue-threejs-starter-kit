@@ -10,7 +10,7 @@
 
 <script lang="babel">
 
-  import Scene from '../Scene';
+  import Scene from '../components/Scene';
   import Quick from '../helpers/Object3D';
 
   export default {

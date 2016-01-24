@@ -1,6 +1,6 @@
 import THREE from 'three';
 import Controls from 'orbit-controls';
-import Config from './helpers/Config';
+import Config from '../helpers/Config';
 import PostProcessing from './PostProcessing';
 import DAT from 'dat-gui';
 
