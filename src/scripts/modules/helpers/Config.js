@@ -5,6 +5,8 @@ export default {
 
   SERVER_URL: "http://localhost:3000",
 
+  BACKGROUND_COLOR: "#fff",
+
   PixelRatio: (function() {
     let ratio = 1;
     if (window.screen.systemXDPI !== undefined && window.screen.logicalXDPI !== undefined && window.screen.systemXDPI > window.screen.logicalXDPI) {

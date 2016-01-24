@@ -18,7 +18,7 @@ export default class Scene {
       "postprocessing": options.postprocessing || false,
       "orbitControls": options.orbitControls !== undefined ? options.orbitControls : true,
       "backgroundOpacity": options.backgroundOpacity !== undefined ? options.backgroundOpacity : 1,
-      "backgroundColor": options.backgroundColor || new THREE.Color( 0xdddddd )
+      "backgroundColor": options.backgroundColor || new THREE.Color( Config.BACKGROUND_COLOR )
     };
 
     this.options   = defaultOptions;
